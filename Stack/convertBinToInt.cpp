@@ -1,4 +1,4 @@
-// this is a function you can declare above "int main()" after including "Stack.h"
+// this is a function you can declare above "int main()" after including "Stack.h" and <math.h>
 
 int convertBinaryToInt(char* binString)
 	{
