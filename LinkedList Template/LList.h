@@ -11,6 +11,14 @@ public:
 	Node<T>* head;
 	int size; 
 	LList(){ size = 0; head = NULL; }
+	~LList(){
+		Node<T>* newNode;
+		while(head != NULL){
+			newNode = head;
+			head = head->next;
+			delete newNode;
+		}
+	}
 	int getSize() const{ return size; }
 	bool isEmpty() const{ return size == 0; }
 	bool isFull() const{ return false; };
@@ -104,14 +112,7 @@ public:
 		return false;
 	}
 
-	void clear(){
-		Node<T>* newNode;
-		while(head != NULL){
-			newNode = head;
-			head = head->next;
-			delete newNode;
-		}
-	}
+	
 
 	int indexOf(T value){
 		Node<T>* walk = head;
@@ -125,25 +126,6 @@ public:
 		}
 
 		return -1;
-	}
-
-	void buildFromTextFile(char* fname){
-	
-		ifstream myReadFile;
-		myReadFile.open(fname);
-		double value;
-		if (myReadFile.is_open()) {
-			while (!myReadFile.eof()) {
-				 myReadFile >> value;
-				 insertToEnd(value);
-			}
-			myReadFile.close();
-		}
-		
-		
-		else{
-			cout << "Can not open file.." << endl;
-		}
 	}
 
 	int negatives(){
@@ -203,21 +185,6 @@ public:
 			walk = walk->next;
 		}
 		return;
-	}
-
-	void saveAndExit(string filename){
-		if(head == NULL)
-			return;
-		
-		Node<T>* walk = head;
-		ofstream myfile;
-		myfile.open(filename);
-	
-		while(walk != NULL){
-			myfile << walk->data << endl;
-			walk = walk->next;
-		}
-		myfile.close();
 	}
 
 	void reArrange(){
