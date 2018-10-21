@@ -1,5 +1,7 @@
 // Provide 9598 text file(numbers are consecutive like 1.txt,2.txt).
-// Run the program. (It will create a binary search tree consists of words from files read. While reading a file, it first checks whether the word exists in tree. If it does, the program adds the name of the file to the listOfFiles variable in BTreeNode of that word. If it doesn't, the program creates a BTreeNode and insert it to tree.)
+// Run the program. (It will create a binary search tree consists of words from files read. 
+// While reading a file, it first checks whether the word exists in tree. If it does, the program adds the name of the 
+// file to the listOfFiles variable in BTreeNode of that word. If it doesn't, the program creates a BTreeNode and insert it to tree.)
 // The program will give you the list of files which contain that word. 
 
 #include "BinarySearchTree.h"
